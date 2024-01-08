@@ -1,0 +1,43 @@
+@import '@/styles/utils/media'
+
+.titleContainer
+  display: flex
+  align-items: center
+  font-weight: 500
+  letter-spacing: -0.15rem
+
+  &__avatar
+    width: var(--size)
+    height: var(--size)
+    border-radius: var(--radius-full)
+
+    @include media('<=phone')
+      --size: 3rem
+
+    @include media('>phone')
+      --size: 4rem
+
+  &__title
+    margin-left: .25em
+
+.intro
+  margin-top: var(--spacing-6)
+  line-height: var(--paragraph)
+  text-wrap: balance
+  font-size: var(--font-l)
+  font-weight: 400
+  color: var(--color-gray11)
+
+  @include media ('>phone')
+    padding-right: 20%
+
+.linkList
+  margin-top: var(--spacing-8)
+  display: flex
+  flex-wrap: wrap
+  gap: var(--spacing-4)
+
+  &__item
+    --padding: .5rem 1rem
+    --border-radius: var(--radius-full)
+    --font-size: var(--font-s)

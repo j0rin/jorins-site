@@ -1,0 +1,48 @@
+@import '@/styles/utils/media'
+
+.container
+  margin-bottom: var(--section-spacing)
+  padding-top: var(--spacing-7)
+  border-top: var(--border-width) solid var(--color-gray4)
+
+  &__inner
+    max-width: var(--main)
+    margin: 0 auto
+    padding: 0 var(--spacing-4)
+    display: flex
+    gap: var(--spacing-6)
+
+    @include media('<=phone')
+      flex-direction: column
+
+    @include media('>phone')
+      justify-content: space-between
+
+    div:first-child
+      min-width: 50%
+
+.heading
+  font-size: var(--font-l)
+  font-weight: 500
+
+.emailButton
+  margin-top: var(--spacing-5)
+
+.linkList
+  margin-top: var(--spacing-5)
+  display: flex
+  flex-direction: column
+  gap: var(--spacing-4)
+
+  &__item
+    color: var(--color-gray9)
+    transition: color .2s ease
+
+    &[data-active="true"]
+      color: var(--color-gray11)
+
+    @media (hover: hover)
+      &[data-active="false"]
+        &:hover,
+        &:focus
+          color: var(--color-gray11)

@@ -1,0 +1,77 @@
+@import '@/styles/utils/media'
+
+.container
+  padding-bottom: var(--spacing-7)
+  border-bottom: var(--border-width) solid var(--color-gray4)
+
+.infoContainer
+  margin-top: var(--spacing-6)
+
+.tagList
+  margin-bottom: var(--spacing-6)
+  display: flex
+  flex-wrap: wrap
+  gap: var(--spacing-3)
+
+  &__item
+    padding: .375rem .5rem
+    background: linear-gradient(90deg, var(--color-gray4) 0%, var(--color-gray3) 100%)
+    border-radius: var(--radius-full)
+    border: var(--border-width) solid var(--color-gray6)
+    font-size: var(--font-xs)
+    color: var(--color-gray11)
+
+.infoCols
+  display: flex
+  gap: var(--spacing-6)
+
+  @include media('<=phone')
+    flex-direction: column
+
+  &__col
+    display: flex
+    flex-direction: column
+    gap: var(--spacing-6)
+
+    @include media('>phone')
+      &:nth-child(1)
+        width: 30%
+
+      &:nth-child(2)
+        width: 70%
+
+.heading
+  font-size: var(--font-s)
+  font-weight: 500
+  color: var(--color-gray10)
+
+.paragraph
+  margin-top: var(--spacing-3)
+  line-height: var(--paragraph)
+
+.toolList
+  margin-top: calc(var(--spacing-3) + .375em)
+  margin-bottom: .5em
+
+  &__item
+    display: flex
+    align-items: center
+    gap: var(--spacing-3)
+
+    &:not(:first-child)
+      margin-top: var(--spacing-4)
+
+    img
+      width: 1.5em
+      height: 1.5em
+      object-fit: contain
+
+.urlButton
+  --display: flex
+  justify-content: center
+  align-items: center
+  gap: var(--spacing-2)
+
+  svg
+    width: 1.25em
+    height: 1.25em

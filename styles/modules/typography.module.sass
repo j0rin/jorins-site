@@ -1,0 +1,26 @@
+@import '@/styles/utils/media'
+  
+.pageTitle
+  background-image: linear-gradient(90deg, var(--color-gray12) 0%, var(--color-gray10) 100%)
+  font-weight: 500
+  letter-spacing: -.15rem
+  display: inline
+  background-clip: text
+  -webkit-text-fill-color: transparent
+
+  @include media('<=phone')
+    font-size: 2.5rem
+
+  @include media('>phone')
+    font-size: 3.5rem
+
+.pageSubtitle
+  margin-top: var(--spacing-4)
+  font-weight: 400
+  color: var(--color-gray10)
+
+  @include media('<=phone')
+    font-size: var(--font-l)
+
+  @include media('>phone')
+    font-size: var(--font-xl)

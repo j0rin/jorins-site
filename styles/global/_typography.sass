@@ -1,0 +1,33 @@
+@font-face
+  font-family: 'Inter var'
+  font-weight: 100 900
+  font-display: swap
+  font-style: normal
+  font-named-instance: 'Regular'
+  src: url("../../fonts/Inter-roman.var.woff2?v=3.19") format("woff2")
+
+@font-face
+  font-family: 'Inter var'
+  font-weight: 100 900
+  font-display: swap
+  font-style: italic
+  font-named-instance: 'Italic'
+  src: url("../../fonts/Inter-italic.var.woff2?v=3.19") format("woff2")
+
+html
+  font-size: 16px
+  font-family: 'Inter', sans-serif
+
+@supports (font-variation-settings: normal)
+  html
+    font-family: 'Inter var', sans-serif
+
+body
+  font-size: 1rem
+  font-weight: 400
+  line-height: 1.2
+  color: var(--color-gray12)
+
+a
+  text-decoration: none
+  color: inherit

@@ -1,0 +1,66 @@
+.imageBlock
+  &__image
+    position: relative
+
+    &[data-bg="true"]
+      overflow: hidden
+      border-radius: var(--radius-m)
+      background: var(--color-gray1)
+      border: var(--border-width) solid var(--color-gray4)
+
+.imageBlock,
+.videoBlock
+  margin: 1.5rem 0
+
+  &__desc
+    margin-top: var(--spacing-4)
+    text-align: right
+    font-size: var(--font-s)
+    color: var(--color-gray10)
+    font-style: italic
+
+.imageBlock img,
+.videoBlock__video
+  width: 100%
+  height: auto
+  object-fit: contain
+
+.videoBlock__video
+  border-radius: var(--radius-m)
+  background: var(--color-gray1)
+  border: var(--border-width) solid var(--color-gray4)
+
+.heading
+  margin-top: 2em
+  margin-bottom: revert
+  font-weight: 500
+
+.subheading
+  margin: revert
+  font-weight: 500
+
+.paragraph
+  margin: revert
+  line-height: var(--paragraph)
+
+.link
+  padding: 0 .25em
+  border-radius: .25em
+  background: var(--color-gray2)
+  color: var(--color-gray11)
+
+  @media (hover: hover)
+    transition: background .2s ease, color .2s ease
+
+    &:hover,
+    &:focus
+      background: var(--color-gray4)
+      color: var(--color-gray12)
+
+.list
+  margin: revert
+  list-style: revert
+  list-style-position: inside
+
+  &__item:not(:first-child)
+    margin-top: 1em

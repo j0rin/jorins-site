@@ -1,0 +1,17 @@
+.simpleButton
+  padding: var(--padding, .75rem 2rem)
+  display: var(--display, inline-block)
+  border-radius: var(--border-radius, var(--radius-s))
+  background: var(--color-gray3)
+  border: var(--border-width) solid var(--color-gray6)
+  font-size: var(--font-size, var(--font-m))
+  color: var(--color-gray11)
+
+  @media (hover: hover)
+    transition: background .2s ease, border-color .2s ease, color .2s ease
+
+    &:hover,
+    &:focus
+      background: var(--color-gray4)
+      border-color: var(--color-gray7)
+      color: var(--color-gray12)

@@ -1,0 +1,135 @@
+@import '@/styles/utils/media'
+
+.container
+  width: 100%
+  margin-bottom: var(--spacing-6)
+  padding: 0 var(--spacing-2)
+  position: sticky
+  bottom: var(--spacing-6)
+  z-index: 999
+  display: flex
+  justify-content: center
+  align-items: center
+  user-select: none
+
+  &::before,
+  &::after
+    content: ""
+    width: 100%
+    height: 8rem
+    position: absolute
+    bottom: calc(-1 * var(--spacing-6))
+    left: 0
+    z-index: -1
+    pointer-events: none
+
+  &::before
+    background: linear-gradient(to top, var(--color-body), transparent)
+
+  &::after
+    backdrop-filter: blur(4px)
+    mask-image: linear-gradient(to top, #fff, transparent)
+
+  &__inner
+    max-width: calc(var(--main) - var(--spacing-4))
+    padding: var(--spacing-2)
+    display: flex
+    justify-content: space-between
+    border-radius: var(--radius-full)
+    background: var(--color-gray1)
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .5)
+    border: var(--border-width) solid var(--color-gray4)
+
+    @include media ('>tablet')
+      width: 100%
+
+.nameContainer
+  display: flex
+  align-items: center
+  gap: var(--spacing-4)
+
+  @include media ('<=tablet')
+    display: none
+
+  &__avatar
+    width: 2.5rem
+    height: 2.5rem
+    position: relative
+    border-radius: var(--radius-full)
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center
+      border-radius: inherit
+
+  &__availability
+    width: .75rem
+    height: .75rem
+    position: absolute
+    right: 14.6447%
+    bottom: 14.6447%
+    transform: translate(50%, 50%)
+    border-radius: var(--radius-full)
+    background: hsl(145, 84%, 43%)
+    border: .125rem solid var(--color-gray1)
+
+    &::after
+      content: ""
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      background: inherit
+      border-radius: inherit
+      animation: blink 4s ease-out infinite
+
+      @keyframes blink
+        0%
+          transform: scale(1)
+          opacity: .7
+        50%
+          transform: scale(3)
+          opacity: 0
+        100%
+          transform: scale(3)
+          opacity: 0
+
+  &__name
+    font-size: var(--font-m)
+    font-weight: 500
+
+  &__role
+    font-size: var(--font-s)
+    font-weight: 400
+    color: var(--color-gray10)
+
+.navList
+  display: flex
+  gap: var(--spacing-2)
+
+  &__item
+    height: 2.5rem
+    padding: 0 1.5rem
+    display: flex
+    align-items: center
+    border-radius: var(--radius-full)
+    background: var(--color-gray2)
+    border: var(--border-width) solid var(--color-gray4)
+    font-size: var(--font-m)
+    color: var(--color-gray10)
+    transition: background .2s ease, color .2s ease
+
+    &[data-active="true"]
+      background: var(--color-gray4)
+      border-color: var(--color-gray6)
+      color: var(--color-gray11)
+
+    @media (hover: hover)
+      &[data-active="false"]
+        &:hover,
+        &:focus
+          background: var(--color-gray3)
+          border-color: var(--color-gray5)
