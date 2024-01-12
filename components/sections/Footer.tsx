@@ -20,9 +20,7 @@ export default function Footer() {
       <div className={styles.container__inner}>
         <div>
           <h3 className={styles.heading}>Neem contact met mij op</h3>
-          <SimpleButton className={styles.emailButton} href="mailto:j.zanstra@gmail.com">
-            j.zanstra@gmail.com
-          </SimpleButton>
+          <SimpleButton href="mailto:j.zanstra@gmail.com">j.zanstra@gmail.com</SimpleButton>
         </div>
         {categories.map((category, listIndex) => (
           <div key={listIndex}>
